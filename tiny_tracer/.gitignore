@@ -1,0 +1,12 @@
+.vs/
+*.opensdf
+*.sdf
+*.suo
+*.sln
+*.user
+x64/
+Release
+Debug
+obj-ia32
+obj-intel64
+

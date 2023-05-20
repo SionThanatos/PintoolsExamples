@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{7cb6265e-f5bb-4f7b-ae31-d9b6843ceaeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{7c0a3267-a28c-4f18-ae87-1afd4de7cc7a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ad.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="memaccess.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="MyPinTool.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ad.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="memaccess.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="MyPinTool.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Tracer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Util.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
