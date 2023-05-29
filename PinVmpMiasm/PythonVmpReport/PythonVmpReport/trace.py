@@ -1,4 +1,4 @@
-import struct 
+﻿import struct 
 
 class Trace(object):
     """docstring for Trace"""

@@ -1,4 +1,4 @@
-from pyh import *
+﻿from pyh import *
 
 import config
 

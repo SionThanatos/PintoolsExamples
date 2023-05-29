@@ -1,4 +1,4 @@
-#ÅäÖÃÎÄ¼ş
+ï»¿#é…ç½®æ–‡ä»¶
 
 EXE_PATH = r"C:\Users\ZAI\Desktop\Research\pin\PintoolsExamples\PinVmpMiasm\testvmp2\test.vmp_2.13.8_pro.exe"
 # EXE_PATH = "C:\\Users\\Moon\\Desktop\\vmp1.81\\test.vmp_2.13.8_pro.exe"

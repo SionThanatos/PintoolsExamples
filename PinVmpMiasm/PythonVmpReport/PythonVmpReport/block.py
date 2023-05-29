@@ -1,14 +1,14 @@
-from symexec import SymExecObject
+ï»¿from symexec import SymExecObject
 
 class BasicBlock(SymExecObject):
     """
-    ¼Ì³Ğ×Ô SymExecObject Àà¡£¸ÃÀà±íÊ¾³ÌĞòµÄ»ù±¾¿é£¬ËüÓÉÒ»ÏµÁĞÖ¸Áî×é³É
-    _instructions ±íÊ¾Ö¸ÁîĞòÁĞ£¬
-    loops ±íÊ¾¸Ã»ù±¾¿éÖĞ°üº¬µÄÑ­»·£¬
-    visited ÓÃÓÚ±êÊ¶¸Ã»ù±¾¿éÊÇ·ñÒÑ¾­±» DFS ·ÃÎÊ¹ı
-    exec_count ±íÊ¾¸Ã»ù±¾¿é±»Ö´ĞĞµÄ´ÎÊı
-    _nexts ºÍ _prevs ·Ö±ğ±íÊ¾¸Ã»ù±¾¿éµÄÏÂÒ»¸öºÍÉÏÒ»¸ö»ù±¾¿é
-    sub_blocks ±íÊ¾¸Ã»ù±¾¿éÖĞ°üº¬µÄ×Ó»ù±¾¿é
+    ç»§æ‰¿è‡ª SymExecObject ç±»ã€‚è¯¥ç±»è¡¨ç¤ºç¨‹åºçš„åŸºæœ¬å—ï¼Œå®ƒç”±ä¸€ç³»åˆ—æŒ‡ä»¤ç»„æˆ
+    _instructions è¡¨ç¤ºæŒ‡ä»¤åºåˆ—ï¼Œ
+    loops è¡¨ç¤ºè¯¥åŸºæœ¬å—ä¸­åŒ…å«çš„å¾ªç¯ï¼Œ
+    visited ç”¨äºæ ‡è¯†è¯¥åŸºæœ¬å—æ˜¯å¦å·²ç»è¢« DFS è®¿é—®è¿‡
+    exec_count è¡¨ç¤ºè¯¥åŸºæœ¬å—è¢«æ‰§è¡Œçš„æ¬¡æ•°
+    _nexts å’Œ _prevs åˆ†åˆ«è¡¨ç¤ºè¯¥åŸºæœ¬å—çš„ä¸‹ä¸€ä¸ªå’Œä¸Šä¸€ä¸ªåŸºæœ¬å—
+    sub_blocks è¡¨ç¤ºè¯¥åŸºæœ¬å—ä¸­åŒ…å«çš„å­åŸºæœ¬å—
     """
 
     def __init__(self, instructions=None):
@@ -85,7 +85,7 @@ class BasicBlock(SymExecObject):
 
     def add_ins(self, ins):
         """
-        Ïò¸Ã»ù±¾¿éÌí¼ÓÖ¸Áî
+        å‘è¯¥åŸºæœ¬å—æ·»åŠ æŒ‡ä»¤
         """
         self._instructions.append(ins)
 
@@ -130,13 +130,13 @@ class BasicBlock(SymExecObject):
 
     def prev_blocks(self, bm):
         """
-        ·µ»ØÇ°Çı
+        è¿”å›å‰é©±
         """
         return [bm.blocks[addr] for addr in self.prevs]
 
     def next_blocks(self, bm):
         """
-        ·µ»Øºó¼Ì»ù±¾¿é
+        è¿”å›åç»§åŸºæœ¬å—
         """
         return [bm.blocks[addr] for addr in self.nexts]
 
@@ -157,7 +157,7 @@ class BasicBlock(SymExecObject):
 
     def __str__(self):
         """
-         __str__ ÓÃÓÚ·µ»Ø¶ÔÏóµÄ×Ö·û´®±íÊ¾ĞÎÊ½
+         __str__ ç”¨äºè¿”å›å¯¹è±¡çš„å­—ç¬¦ä¸²è¡¨ç¤ºå½¢å¼
         """
         buf = ''
         buf += 'Block(%#x - %#x) SIZE(%d) INS(%d) EXEC(%d) LOOP(%d)\n' % (
@@ -173,7 +173,7 @@ class BasicBlock(SymExecObject):
 
     def __repr__(self):
         """
-        __repr__ ÓÃÓÚ·µ»Ø¶ÔÏóµÄ»úÆ÷¿É¶ÁĞÎÊ½
+        __repr__ ç”¨äºè¿”å›å¯¹è±¡çš„æœºå™¨å¯è¯»å½¢å¼
         """
         return '<Block(%#x - %#x) INS(%d) PREV(%d) NEXT(%d) EXEC(%d) LOOP(%d)>' % (
             self.start_addr, self.end_addr, self.ins_count,
@@ -183,7 +183,7 @@ class BasicBlock(SymExecObject):
     def merge_block(self, block):
         """
         Merge sequential block, used in BBLManager.consolidate_blocks()
-        ºÏ²¢Á¬ĞøµÄ»ù±¾¿é
+        åˆå¹¶è¿ç»­çš„åŸºæœ¬å—
         """
         # note that block to merge may be consolidated, too.
         self.sub_blocks.append(block)

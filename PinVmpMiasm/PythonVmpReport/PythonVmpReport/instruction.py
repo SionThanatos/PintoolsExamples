@@ -1,10 +1,7 @@
+ï»¿
 
 class Instruction(object):
-    """
-    nstruction µÄÀà£¬ËüÓĞÈı¸ö³ÉÔ±±äÁ¿£¨¼´ÊôĞÔ£©£ºaddr¡¢disasm ºÍ bytes¡£
-    ·Ö±ğ±íÊ¾Ö¸ÁîµÄµØÖ·¡¢·´»ã±àÖ¸ÁîºÍÖ¸Áî´æ´¢µÄ×Ö½ÚÂë¡£
-    addr ±íÊ¾Ò»¸öÕûÊı£¬disasm ºÍ bytes ¶¼ÊÇ×Ö·û´®
-    """
+
 
     def __init__(self, addr, disasm, bytes):
         self.addr = addr
@@ -47,9 +44,7 @@ def parse_file(filepath):
 '''
 
 def parse_file(filepath):
-    """
-    Ê¹ÓÃÉÏÏÂÎÄ¹ÜÀíÆ÷´ò¿ªÎÄ¼ş£¬²¢°´ĞĞ¶ÁÈ¡¡¢½âÂë¡¢·Ö¸îµÃµ½µÄ½á¹û
-    """
+
     with open(filepath, 'rb') as f:
         for line in f:
             decoded_line = line.decode('utf-8')
@@ -57,7 +52,7 @@ def parse_file(filepath):
             addr = int(parts[0], 16)
             diasm = parts[1]
             hexbytes = bytes.fromhex(parts[2])
-            #¸Ãº¯ÊıÉú³ÉÒ»¸ö Instruction ¶ÔÏó£¬°üÀ¨µØÖ·¡¢·´»ã±àÖ¸ÁîºÍÊ®Áù½øÖÆ×Ö½Ú
+            #è¯¥å‡½æ•°ç”Ÿæˆä¸€ä¸ª Instruction å¯¹è±¡ï¼ŒåŒ…æ‹¬åœ°å€ã€åæ±‡ç¼–æŒ‡ä»¤å’Œåå…­è¿›åˆ¶å­—èŠ‚
             yield Instruction(addr, diasm, hexbytes)
 
 

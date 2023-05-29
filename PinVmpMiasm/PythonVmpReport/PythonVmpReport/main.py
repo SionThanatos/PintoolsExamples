@@ -1,15 +1,15 @@
-#Support python3 in 2023.5.18
+ï»¿#Support python3 in 2023.5.18
 import bbl_manager
 import config
 import report
 
 import os
 
-#Ö÷º¯Êı
+#ä¸»å‡½æ•°
 def main():
    
     # Change work folder.
-    #»ñÈ¡ÅäÖÃ¼°Â·¾¶
+    #è·å–é…ç½®åŠè·¯å¾„
     os.chdir(config.WORK_PATH)
 
     print( '[*] Target: %s' % config.EXE_PATH)
@@ -18,26 +18,26 @@ def main():
     print( '#'*80)
 
     #pin_cmd = r'pin.exe -t %s -- %s' % (config.PIN_TOOL, config.EXE_PATH)
-    #Ö´ĞĞpinÃüÁî
+    #æ‰§è¡Œpinå‘½ä»¤
     os.system(config.PIN_CMD)
 
     print( '#'*80)
 
     print( '[*] Pin instrument finished.' )
 
-    #´´½¨»ù±¾¿é¹ÜÀí
+    #åˆ›å»ºåŸºæœ¬å—ç®¡ç†
     global bm
     bm = bbl_manager.BBLManager()
 
 
     print( '----- STEP 2 -----')
     # Load instructions.
-    #¼ÓÔØÖ¸ÁîĞÅÏ¢
+    #åŠ è½½æŒ‡ä»¤ä¿¡æ¯
     bm.load_ins_info(config.INS_PATH)
 
     print( '----- STEP 3 -----')
     # Load trace.
-    #¼ÓÔØtrace
+    #åŠ è½½trace
     bm.load_trace(config.TRACE_PATH, config.START_ADDR, config.END_ADDR)
 
     print( '----- STEP 4 -----')
@@ -45,12 +45,12 @@ def main():
     bm.consolidate_blocks()
 
     print( '----- STEP 5 -----')
-    #¼ì²âhandler
+    #æ£€æµ‹handler
     bm.detect_handlers()
 
     print( '----- STEP 6 -----')
     print( '[*] Generating report ....')
-    #Éú³É±¨¸æ
+    #ç”ŸæˆæŠ¥å‘Š
     report.gen_report(bm)  
     print( '[*] Report generated.')
 
